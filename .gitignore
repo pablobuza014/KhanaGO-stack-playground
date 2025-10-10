@@ -1,0 +1,81 @@
+# ---------- Global / editors ----------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+*.log
+logs/
+*.swp
+
+# ---------- Node / JS (Next.js, React Native) ----------
+**/node_modules/
+**/.npm/
+**/.yarn/*
+!**/.yarn/patches/
+!**/.yarn/plugins/
+!**/.yarn/releases/
+!**/.yarn/sdks/
+!**/.yarn/versions/
+**/.pnp.*
+**/.parcel-cache/
+**/.turbo/
+**/.cache/
+# Next.js
+**/.next/
+**/out/
+**/.vercel/
+# React Native
+ReactNative_FRONTEND/android/.gradle/
+ReactNative_FRONTEND/android/app/build/
+ReactNative_FRONTEND/android/build/
+ReactNative_FRONTEND/ios/DerivedData/
+ReactNative_FRONTEND/ios/build/
+ReactNative_FRONTEND/ios/Pods/
+# Metro / Watchman
+**/.watchmanconfig
+
+# ---------- Flutter ----------
+Flutter_FRONTEND/.dart_tool/
+Flutter_FRONTEND/.packages
+Flutter_FRONTEND/build/
+Flutter_FRONTEND/coverage/
+Flutter_FRONTEND/.flutter-plugins
+Flutter_FRONTEND/.flutter-plugins-dependencies
+Flutter_FRONTEND/.metadata
+
+# ---------- Python (FastAPI / Django) ----------
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.venv/
+**/venv/
+**/env/
+**/.coverage
+**/htmlcov/
+# common env files
+**/.env
+**/.env.* 
+!**/.env.example
+
+# ---------- Java / Spring Boot ----------
+SpringBoot_BACKEND/target/
+SpringBoot_BACKEND/.mvn/wrapper/maven-wrapper.jar
+SpringBoot_BACKEND/.mvn/wrapper/maven-wrapper.properties
+SpringBoot_BACKEND/.mvn/wrapper/maven-wrapperdownloader.jar
+SpringBoot_BACKEND/.settings/
+SpringBoot_BACKEND/.project
+SpringBoot_BACKEND/.classpath
+SpringBoot_BACKEND/.idea/
+SpringBoot_BACKEND/.gradle/
+# keep wrappers & poms
+!SpringBoot_BACKEND/mvnw
+!SpringBoot_BACKEND/mvnw.cmd
+!SpringBoot_BACKEND/pom.xml
+
+# ---------- Misc build artefacts ----------
+**/dist/
+**/build/
+**/coverage/
