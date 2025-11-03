@@ -1,0 +1,118 @@
+KhanaGO – Backends & Frontends (Guía rápida, Windows) 
+======================================================
+
+
+PUERTOS (desde los frontends)
+-----------------------------
+FastAPI_BACKEND  -> 8001
+Django_BACKEND   -> 8002
+SpringBoot_BACKEND -> 8003
+
+RUTAS DE PYTHON EN ENTORNOS VIRTUALES (referencia)
+--------------------------------------------------
+Django_BACKEND   : C:\Users\user\Desktop\KhanaGO-stack-playground\Django_BACKEND\.venv\Scripts\python.exe
+FastAPI_BACKEND  : C:\Users\user\Desktop\KhanaGO-stack-playground\FastAPI_BACKEND\.venv\Scripts\python.exe
+
+Salir de .venv (en cualquier momento)
+-------------------------------------
+deactivate
+
+
+
+
+========================
+==   BACKENDS (API)   ==
+========================
+
+1) Django_BACKEND (puerto 8002)
+-------------------------------
+Directorio:
+  cd C:\Users\user\Desktop\KhanaGO-stack-playground\Django_BACKEND
+
+Activar venv:
+  .\.venv\Scripts\activate
+
+Migraciones (tras cambios en modelos):
+  python manage.py makemigrations gymkhanas
+  python manage.py migrate
+
+Arrancar servidor:
+  python manage.py runserver 0.0.0.0:8002
+
+(Alternativa equivalente si se prefiere)
+  python -m django runserver 0.0.0.0:8002 --settings=django_backend.settings
+
+
+2) FastAPI_BACKEND (puerto 8001)
+--------------------------------
+Directorio:
+  cd C:\Users\user\Desktop\KhanaGO-stack-playground\FastAPI_BACKEND
+
+Activar venv (elige el nombre real de tu venv):
+  .\.venv\Scripts\activate
+
+Instalar con el python del venv:
+  python -m pip install --upgrade pip
+  python -m pip install fastapi uvicorn
+
+Arrancar servidor:
+  python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
+
+Si “uvicorn no se reconoce”:
+  python -m pip install uvicorn fastapi
+
+
+3) SpringBoot_BACKEND (puerto 8003)
+-----------------------------------
+Arrancar:
+  mvn spring-boot:run
+
+
+
+
+========================
+==    FRONTENDS       ==
+========================
+
+A) ReactNative_FRONTEND
+-----------------------
+Primera vez:
+  npm install
+  npm i -D cross-env
+
+Elegir backend y arrancar (usa uno de los 3):
+  npm run start:fastapi     # usa puerto 8001
+  npm run start:django      # usa puerto 8002
+  npm run start:springboot  # usa puerto 8003
+
+Configurar o cambiar puerto del backend:
+  Editar: app.config.js y client.js
+  -> Cambiar el const envFile para apuntar al entorno/puerto deseado.
+
+B) Flutter_FRONTEND (web/chrome)
+--------------------------------
+Arrancar:
+  flutter run -d chrome
+
+Configurar o cambiar puerto del backend:
+  Editar: config.dart
+  -> Ajustar la URL base al puerto del backend (8001/8002/8003).
+
+C) Next_FRONTEND
+----------------
+Arrancar:
+  npm run dev
+
+Configurar o cambiar puerto del backend:
+  Editar: .env.local y api.ts
+
+
+
+
+========================
+==   RECORDATORIOS    ==
+========================
+- Los puertos esperados por los frontends son:
+    8001 (FastAPI), 8002 (Django), 8003 (Spring Boot).
+- Siempre activa el .venv del backend antes de instalar o arrancar.
+- Para salir del .venv:  deactivate

@@ -1,3 +1,5 @@
+// lib/services/api.dart
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../config.dart';
@@ -10,19 +12,20 @@ class Api {
       Uri.parse("$_base$path").replace(queryParameters: q);
 
   Future<List<Gymkhana>> list({String? q}) async {
-    final resp = await http.get(_u('/gymkhanas', q != null ? {'q': q} : null));
+    final resp = await http.get(_u('/gymkhanas/', q != null ? {'q': q} : null));
     if (resp.statusCode != 200) throw Exception(resp.body);
     final List data = jsonDecode(resp.body);
     return data.map((e) => Gymkhana.fromJson(e)).toList();
   }
 
+  // CREATE
   Future<Gymkhana> create({
     required String name,
     String? description,
     String? location,
   }) async {
     final resp = await http.post(
-      _u('/gymkhanas'),
+      _u('/gymkhanas/'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         'name': name,
@@ -30,12 +33,36 @@ class Api {
         'location': location,
       }),
     );
-    if (resp.statusCode != 201) throw Exception(resp.body);
+    if (resp.statusCode != 201 && resp.statusCode != 200)
+      throw Exception(resp.body);
     return Gymkhana.fromJson(jsonDecode(resp.body));
   }
 
+  // UPDATE
+  Future<Gymkhana> update(
+    int id, {
+    required String name,
+    String? description,
+    String? location,
+  }) async {
+    final resp = await http.put(
+      _u('/gymkhanas/$id/'),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'name': name,
+        'description': description,
+        'location': location,
+      }),
+    );
+    if (resp.statusCode != 200) throw Exception(resp.body);
+    return Gymkhana.fromJson(jsonDecode(resp.body));
+  }
+
+  // DELETE
   Future<void> delete(int id) async {
-    final resp = await http.delete(_u('/gymkhanas/$id'));
-    if (resp.statusCode != 204) throw Exception(resp.body);
+    final resp = await http.delete(_u('/gymkhanas/$id/'));
+    if (resp.statusCode != 204 && resp.statusCode != 200) {
+      throw Exception(resp.body);
+    }
   }
 }

@@ -22,15 +22,17 @@
   </properties>
 
   <dependencies>
-    <!-- NECESARIO para @RestController, @GetMapping, etc. -->
+    <!-- web básico -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
+    <!-- swagger / openapi UI -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter</artifactId>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>2.6.0</version>
     </dependency>
 
     <dependency>
@@ -45,7 +47,6 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <!-- Fija la clase main para evitar confusiones -->
         <configuration>
           <mainClass>springboot_backend.khanago.KhanagoApplication</mainClass>
         </configuration>

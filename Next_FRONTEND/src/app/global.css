@@ -1,0 +1,92 @@
+/* src/app/global.css */
+
+/* COLOR PALETTE */
+:root{
+  --indigo:  #3f51b5; /* navbar */
+  --divider: #e5e7eb; /* divider lines */
+  --bg:      #ffffff; /* background */
+
+ 
+  --icon-edit:   #374151;
+  --icon-delete: #dc2626;
+  --list-hover:  #f8fafc;
+}
+
+body{
+  background: var(--bg);
+  color: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+/* inputs */
+.gym-input {
+  width: 100%;
+  padding: .5rem 0;
+  border: none;
+  border-bottom: 1px solid var(--divider);
+  outline: none;
+  font-size: .9rem;
+}
+.gym-input:focus {
+  border-bottom-color: var(--indigo);
+}
+
+/* main button */
+.gym-btn-primary {
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: .6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.gym-btn-primary:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* gymkhanas list */
+.gym-item {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--divider);
+}
+.gym-item:hover {
+  background: var(--list-hover);
+}
+
+/* icon buttons */
+.gym-icon-btn {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: .4rem;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.gym-icon-btn.edit  { color: var(--icon-edit); }
+.gym-icon-btn.delete{ color: var(--icon-delete); }
+
+/* material icons */
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}

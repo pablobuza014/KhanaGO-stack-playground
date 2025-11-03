@@ -1,3 +1,5 @@
+// src/test/java/springboot_backend/khanago/KhanagoApplicationTests.java
+
 package springboot_backend.khanago;
 
 import org.junit.jupiter.api.Test;
