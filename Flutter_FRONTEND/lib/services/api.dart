@@ -33,8 +33,9 @@ class Api {
         'location': location,
       }),
     );
-    if (resp.statusCode != 201 && resp.statusCode != 200)
+    if (resp.statusCode != 201 && resp.statusCode != 200) {
       throw Exception(resp.body);
+    }
     return Gymkhana.fromJson(jsonDecode(resp.body));
   }
 

@@ -89,6 +89,8 @@ Configurar o cambiar puerto del backend:
   Editar: app.config.js y client.js
   -> Cambiar el const envFile para apuntar al entorno/puerto deseado.
 
+Puerto de Frontend: 8081
+
 B) Flutter_FRONTEND (web/chrome)
 --------------------------------
 Arrancar:
@@ -98,6 +100,8 @@ Configurar o cambiar puerto del backend:
   Editar: config.dart
   -> Ajustar la URL base al puerto del backend (8001/8002/8003).
 
+Puerto de Frontend: dinámico.
+
 C) Next_FRONTEND
 ----------------
 Arrancar:
@@ -106,6 +110,7 @@ Arrancar:
 Configurar o cambiar puerto del backend:
   Editar: .env.local y api.ts
 
+Puerto de Frontend: 3000
 
 
 
