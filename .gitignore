@@ -79,3 +79,6 @@ SpringBoot_BACKEND/.gradle/
 **/dist/
 **/build/
 **/coverage/
+
+# ---------- Other ----------
+notas.txt

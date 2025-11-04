@@ -2,9 +2,10 @@
 
 Proyecto multi-stack completo para gestión de gymkhanas con múltiples implementaciones de backend y frontend.
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Descripción](#-descripción)
+- [Demo](#demo)
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [Tecnologías Utilizadas](#-tecnologías-utilizadas)
 - [Requisitos Previos](#-requisitos-previos)
@@ -13,14 +14,14 @@ Proyecto multi-stack completo para gestión de gymkhanas con múltiples implemen
   - [Backends](#backends)
   - [Frontends](#frontends)
 - [Cambiar el Backend en los Frontends](#-cambiar-el-backend-en-los-frontends)
-- [Características](#-características)
-- [Troubleshooting](#-troubleshooting)
+- [Características](#características)
+- [Troubleshooting](#troubleshooting)
 - [Licencia](#licencia)
 - [Contacto](#contacto)
 
 ---
 
-## 📝 Descripción
+## Descripción
 
 Se pretende elegir el mejor backend y el mejor o los mejores frontend(s) en vista al desarrollo de una aplicación para la creación y participación de gymkhanas llamada KhanaGO.
 
@@ -33,26 +34,307 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 
 ---
 
+## Demo
+
+<video
+  src="Multimedia/TFG,%20KhanaGo%20-%20Prueba%20de%20entornos%20tecnol%C3%B3gicos.mp4"
+  controls
+  muted
+  loop
+  width="720"
+/>
+
+---
+
 ## Estructura del Proyecto
 
 ```
-KhanaGO-stack-playground/
-│
-├── Django_BACKEND/         
-│
-├── FastAPI_BACKEND/
-|
-├── SpringBoot_BACKEND/
-|
-├── ReactNative_FRONTEND/
-│
-├── Flutter_FRONTEND/          
-│
-├── Next_FRONTEND/
-│
+├── Django_BACKEND
+│   ├── django_backend
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── gymkhanas
+│   │   ├── migrations
+│   │   │   ├── __init__.py
+│   │   │   ├── 0001_initial.py
+│   │   │   └── 0002_remove_gymkhana_ends_at_remove_gymkhana_starts_at.py
+│   │   ├── __init__.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── db.sqlite3
+│   ├── manage.py
+│   └── requirements.txt
+├── FastAPI_BACKEND
+│   ├── app
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   └── requirements.txt
+│   ├── .gitignore
+│   └── dev.db
+├── Flutter_FRONTEND
+│   ├── android
+│   │   ├── app
+│   │   │   ├── src
+│   │   │   │   ├── debug
+│   │   │   │   │   └── AndroidManifest.xml
+│   │   │   │   ├── main
+│   │   │   │   │   ├── kotlin
+│   │   │   │   │   │   └── com
+│   │   │   │   │   │       └── example
+│   │   │   │   │   │           └── flutter_frontend
+│   │   │   │   │   │               └── MainActivity.kt
+│   │   │   │   │   ├── res
+│   │   │   │   │   │   ├── drawable
+│   │   │   │   │   │   │   └── launch_background.xml
+│   │   │   │   │   │   ├── drawable-v21
+│   │   │   │   │   │   │   └── launch_background.xml
+│   │   │   │   │   │   ├── mipmap-hdpi
+│   │   │   │   │   │   │   └── ic_launcher.png
+│   │   │   │   │   │   ├── mipmap-mdpi
+│   │   │   │   │   │   │   └── ic_launcher.png
+│   │   │   │   │   │   ├── mipmap-xhdpi
+│   │   │   │   │   │   │   └── ic_launcher.png
+│   │   │   │   │   │   ├── mipmap-xxhdpi
+│   │   │   │   │   │   │   └── ic_launcher.png
+│   │   │   │   │   │   ├── mipmap-xxxhdpi
+│   │   │   │   │   │   │   └── ic_launcher.png
+│   │   │   │   │   │   ├── values
+│   │   │   │   │   │   │   └── styles.xml
+│   │   │   │   │   │   └── values-night
+│   │   │   │   │   │       └── styles.xml
+│   │   │   │   │   └── AndroidManifest.xml
+│   │   │   │   └── profile
+│   │   │   │       └── AndroidManifest.xml
+│   │   │   └── build.gradle.kts
+│   │   ├── gradle
+│   │   │   └── wrapper
+│   │   │       └── gradle-wrapper.properties
+│   │   ├── .gitignore
+│   │   ├── build.gradle.kts
+│   │   ├── gradle.properties
+│   │   └── settings.gradle.kts
+│   ├── ios
+│   │   ├── Flutter
+│   │   │   ├── AppFrameworkInfo.plist
+│   │   │   ├── Debug.xcconfig
+│   │   │   └── Release.xcconfig
+│   │   ├── Runner
+│   │   │   ├── Assets.xcassets
+│   │   │   │   ├── AppIcon.appiconset
+│   │   │   │   │   ├── Contents.json
+│   │   │   │   │   ├── Icon-App-1024x1024@1x.png
+│   │   │   │   │   ├── Icon-App-20x20@1x.png
+│   │   │   │   │   ├── Icon-App-20x20@2x.png
+│   │   │   │   │   ├── Icon-App-20x20@3x.png
+│   │   │   │   │   ├── Icon-App-29x29@1x.png
+│   │   │   │   │   ├── Icon-App-29x29@2x.png
+│   │   │   │   │   ├── Icon-App-29x29@3x.png
+│   │   │   │   │   ├── Icon-App-40x40@1x.png
+│   │   │   │   │   ├── Icon-App-40x40@2x.png
+│   │   │   │   │   ├── Icon-App-40x40@3x.png
+│   │   │   │   │   ├── Icon-App-60x60@2x.png
+│   │   │   │   │   ├── Icon-App-60x60@3x.png
+│   │   │   │   │   ├── Icon-App-76x76@1x.png
+│   │   │   │   │   ├── Icon-App-76x76@2x.png
+│   │   │   │   │   └── Icon-App-83.5x83.5@2x.png
+│   │   │   │   └── LaunchImage.imageset
+│   │   │   │       ├── Contents.json
+│   │   │   │       ├── LaunchImage.png
+│   │   │   │       ├── LaunchImage@2x.png
+│   │   │   │       ├── LaunchImage@3x.png
+│   │   │   │       └── README.md
+│   │   │   ├── Base.lproj
+│   │   │   │   ├── LaunchScreen.storyboard
+│   │   │   │   └── Main.storyboard
+│   │   │   ├── AppDelegate.swift
+│   │   │   ├── Info.plist
+│   │   │   └── Runner-Bridging-Header.h
+│   │   ├── Runner.xcodeproj
+│   │   │   ├── project.xcworkspace
+│   │   │   │   ├── xcshareddata
+│   │   │   │   │   ├── IDEWorkspaceChecks.plist
+│   │   │   │   │   └── WorkspaceSettings.xcsettings
+│   │   │   │   └── contents.xcworkspacedata
+│   │   │   ├── xcshareddata
+│   │   │   │   └── xcschemes
+│   │   │   │       └── Runner.xcscheme
+│   │   │   └── project.pbxproj
+│   │   ├── Runner.xcworkspace
+│   │   │   ├── xcshareddata
+│   │   │   │   ├── IDEWorkspaceChecks.plist
+│   │   │   │   └── WorkspaceSettings.xcsettings
+│   │   │   └── contents.xcworkspacedata
+│   │   ├── RunnerTests
+│   │   │   └── RunnerTests.swift
+│   │   └── .gitignore
+│   ├── lib
+│   │   ├── models
+│   │   │   └── gymkhana.dart
+│   │   ├── services
+│   │   │   └── api.dart
+│   │   ├── config.dart
+│   │   └── main.dart
+│   ├── linux
+│   │   ├── flutter
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── generated_plugin_registrant.cc
+│   │   │   ├── generated_plugin_registrant.h
+│   │   │   └── generated_plugins.cmake
+│   │   ├── runner
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── main.cc
+│   │   │   ├── my_application.cc
+│   │   │   └── my_application.h
+│   │   ├── .gitignore
+│   │   └── CMakeLists.txt
+│   ├── macos
+│   │   ├── Flutter
+│   │   │   ├── Flutter-Debug.xcconfig
+│   │   │   ├── Flutter-Release.xcconfig
+│   │   │   └── GeneratedPluginRegistrant.swift
+│   │   ├── Runner
+│   │   │   ├── Assets.xcassets
+│   │   │   │   └── AppIcon.appiconset
+│   │   │   │       ├── app_icon_1024.png
+│   │   │   │       ├── app_icon_128.png
+│   │   │   │       ├── app_icon_16.png
+│   │   │   │       ├── app_icon_256.png
+│   │   │   │       ├── app_icon_32.png
+│   │   │   │       ├── app_icon_512.png
+│   │   │   │       ├── app_icon_64.png
+│   │   │   │       └── Contents.json
+│   │   │   ├── Base.lproj
+│   │   │   │   └── MainMenu.xib
+│   │   │   ├── Configs
+│   │   │   │   ├── AppInfo.xcconfig
+│   │   │   │   ├── Debug.xcconfig
+│   │   │   │   ├── Release.xcconfig
+│   │   │   │   └── Warnings.xcconfig
+│   │   │   ├── AppDelegate.swift
+│   │   │   ├── DebugProfile.entitlements
+│   │   │   ├── Info.plist
+│   │   │   ├── MainFlutterWindow.swift
+│   │   │   └── Release.entitlements
+│   │   ├── Runner.xcodeproj
+│   │   │   ├── project.xcworkspace
+│   │   │   │   └── xcshareddata
+│   │   │   │       └── IDEWorkspaceChecks.plist
+│   │   │   ├── xcshareddata
+│   │   │   │   └── xcschemes
+│   │   │   │       └── Runner.xcscheme
+│   │   │   └── project.pbxproj
+│   │   ├── Runner.xcworkspace
+│   │   │   ├── xcshareddata
+│   │   │   │   └── IDEWorkspaceChecks.plist
+│   │   │   └── contents.xcworkspacedata
+│   │   ├── RunnerTests
+│   │   │   └── RunnerTests.swift
+│   │   └── .gitignore
+│   ├── test
+│   │   └── widget_test.dart
+│   ├── web
+│   │   ├── icons
+│   │   │   ├── Icon-192.png
+│   │   │   ├── Icon-512.png
+│   │   │   ├── Icon-maskable-192.png
+│   │   │   └── Icon-maskable-512.png
+│   │   ├── favicon.png
+│   │   ├── index.html
+│   │   └── manifest.json
+│   ├── windows
+│   │   ├── flutter
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── generated_plugin_registrant.cc
+│   │   │   ├── generated_plugin_registrant.h
+│   │   │   └── generated_plugins.cmake
+│   │   ├── runner
+│   │   │   ├── resources
+│   │   │   │   └── app_icon.ico
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── flutter_window.cpp
+│   │   │   ├── flutter_window.h
+│   │   │   ├── main.cpp
+│   │   │   ├── resource.h
+│   │   │   ├── runner.exe.manifest
+│   │   │   ├── Runner.rc
+│   │   │   ├── utils.cpp
+│   │   │   ├── utils.h
+│   │   │   ├── win32_window.cpp
+│   │   │   └── win32_window.h
+│   │   ├── .gitignore
+│   │   └── CMakeLists.txt
+│   ├── .gitignore
+│   ├── analysis_options.yaml
+│   ├── pubspec.lock
+│   ├── pubspec.yaml
+│   └── README.md
+├── Next_FRONTEND
+│   ├── src
+│   │   ├── app
+│   │   │   ├── global.css
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── components
+│   │   │   └── GymkhanasScreen.tsx
+│   │   └── lib
+│   │       └── api.ts
+│   ├── next-env.d.ts
+│   ├── next.config.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── tailwind.config.ts
+│   └── tsconfig.json
+├── ReactNative_FRONTEND
+│   ├── .expo
+│   │   ├── devices.json
+│   │   ├── README.md
+│   │   └── settings.json
+│   ├── src
+│   │   ├── api
+│   │   │   └── client.js
+│   │   ├── navigation
+│   │   │   └── index.js
+│   │   ├── screens
+│   │   │   └── GymkhanasScreen.js
+│   │   └── App.js
+│   ├── app.config.js
+│   ├── babel.config.js
+│   ├── index.js
+│   ├── jsconfig.json
+│   ├── package-lock.json
+│   └── package.json
+├── SpringBoot_BACKEND
+│   ├── src
+│   │   ├── main
+│   │   │   ├── java
+│   │   │   │   └── springboot_backend
+│   │   │   │       └── khanago
+│   │   │   │           ├── GymkhanaController.java
+│   │   │   │           ├── HomeController.java
+│   │   │   │           ├── KhanagoApplication.java
+│   │   │   │           └── WebConfig.java
+│   │   │   └── resources
+│   │   │       └── application.properties
+│   │   └── test
+│   │       └── java
+│   │           └── springboot_backend
+│   │               └── khanago
+│   │                   └── KhanagoApplicationTests.java
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   └── pom.xml
 ├── .gitignore
-├── notas.txt                      
-└── README.md                      
+├── notas.txt
+└── README.md
+           
 ```
 
 ---
@@ -384,4 +666,7 @@ Para reportar bugs o solicitar features, contacta al creador.
 
 ---
 
-**¡Gracias por usar KhanaGO Stack Playground!** 🎉
+**¡Gracias por usar KhanaGO Stack Playground!**
+
+  <img src="Multimedia/TFG,%20Logo%20KhanaGO.png" alt="Logo KhanaGO" width="280">
+
