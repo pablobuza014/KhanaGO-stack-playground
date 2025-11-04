@@ -38,9 +38,6 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 
 [Ver demo](Multimedia/khanago-demo.mp4)
 
-[![Ver demo](Multimedia/TFG,%20Logo%20KhanaGO%20(Sin%20Pallabra).png)](Multimedia/TFG,%20KhanaGo%20-%20Prueba%C2%B4%20de%20entornos%20tecnol%C3%B3gicos.mp4)
-
-
 ---
 
 ## Estructura del Proyecto
