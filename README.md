@@ -36,13 +36,7 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 
 ## Demo
 
-<video
-  src="Multimedia/TFG,%20KhanaGo%20-%20Prueba%20de%20entornos%20tecnol%C3%B3gicos.mp4"
-  controls
-  muted
-  loop
-  width="720"
-/>
+[Ver demo](Multimedia/khanago-demo.mp4)
 
 ---
 
