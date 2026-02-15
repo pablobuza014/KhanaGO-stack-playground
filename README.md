@@ -4,16 +4,16 @@ Proyecto multi-stack completo para gestión de gymkhanas con múltiples implemen
 
 ## Tabla de Contenidos
 
-- [Descripción](#-descripción)
+- [Descripción](#descripción)
 - [Demo](#demo)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
-- [Requisitos Previos](#-requisitos-previos)
-- [Configuración de Puertos](#-configuración-de-puertos)
-- [Instalación y Ejecución](#-instalación-y-ejecución)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Requisitos Previos](#requisitos-previos)
+- [Configuración de Puertos](#configuración-de-puertos)
+- [Instalación y Ejecución](#instalación-y-ejecución)
   - [Backends](#backends)
   - [Frontends](#frontends)
-- [Cambiar el Backend en los Frontends](#-cambiar-el-backend-en-los-frontends)
+- [Cambiar el Backend en los Frontends](#cambiar-el-backend-en-los-frontends)
 - [Características](#características)
 - [Troubleshooting](#troubleshooting)
 - [Licencia](#licencia)
@@ -32,6 +32,8 @@ Para ello, se hace una prueba de entornos tecnológicos con:
 
 En definitiva, este proyecto sirve como playground para comparar diferentes stacks tecnológicos implementando la misma funcionalidad (operaciones CRUD: ver, crear, actualizar y eliminar gymkhanas).
 
+Para una descripción técnica detallada del stack tecnológico (arquitectura, modelo de dominio, endpoints, análisis de cada backend y frontend, decisión final y justificación), consultar el documento [stack-tecnologico.md](stack-tecnologico.md).
+
 ---
 
 ## Demo
@@ -49,10 +51,7 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 │   │   ├── urls.py
 │   │   └── wsgi.py
 │   ├── gymkhanas
-│   │   ├── migrations
-│   │   │   ├── __init__.py
-│   │   │   ├── 0001_initial.py
-│   │   │   └── 0002_remove_gymkhana_ends_at_remove_gymkhana_starts_at.py
+│   │   ├── migrations/
 │   │   ├── __init__.py
 │   │   ├── apps.py
 │   │   ├── models.py
@@ -70,101 +69,13 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 │   ├── .gitignore
 │   └── dev.db
 ├── Flutter_FRONTEND
-│   ├── android
-│   │   ├── app
-│   │   │   ├── src
-│   │   │   │   ├── debug
-│   │   │   │   │   └── AndroidManifest.xml
-│   │   │   │   ├── main
-│   │   │   │   │   ├── kotlin
-│   │   │   │   │   │   └── com
-│   │   │   │   │   │       └── example
-│   │   │   │   │   │           └── flutter_frontend
-│   │   │   │   │   │               └── MainActivity.kt
-│   │   │   │   │   ├── res
-│   │   │   │   │   │   ├── drawable
-│   │   │   │   │   │   │   └── launch_background.xml
-│   │   │   │   │   │   ├── drawable-v21
-│   │   │   │   │   │   │   └── launch_background.xml
-│   │   │   │   │   │   ├── mipmap-hdpi
-│   │   │   │   │   │   │   └── ic_launcher.png
-│   │   │   │   │   │   ├── mipmap-mdpi
-│   │   │   │   │   │   │   └── ic_launcher.png
-│   │   │   │   │   │   ├── mipmap-xhdpi
-│   │   │   │   │   │   │   └── ic_launcher.png
-│   │   │   │   │   │   ├── mipmap-xxhdpi
-│   │   │   │   │   │   │   └── ic_launcher.png
-│   │   │   │   │   │   ├── mipmap-xxxhdpi
-│   │   │   │   │   │   │   └── ic_launcher.png
-│   │   │   │   │   │   ├── values
-│   │   │   │   │   │   │   └── styles.xml
-│   │   │   │   │   │   └── values-night
-│   │   │   │   │   │       └── styles.xml
-│   │   │   │   │   └── AndroidManifest.xml
-│   │   │   │   └── profile
-│   │   │   │       └── AndroidManifest.xml
-│   │   │   └── build.gradle.kts
-│   │   ├── gradle
-│   │   │   └── wrapper
-│   │   │       └── gradle-wrapper.properties
-│   │   ├── .gitignore
-│   │   ├── build.gradle.kts
-│   │   ├── gradle.properties
-│   │   └── settings.gradle.kts
-│   ├── ios
-│   │   ├── Flutter
-│   │   │   ├── AppFrameworkInfo.plist
-│   │   │   ├── Debug.xcconfig
-│   │   │   └── Release.xcconfig
-│   │   ├── Runner
-│   │   │   ├── Assets.xcassets
-│   │   │   │   ├── AppIcon.appiconset
-│   │   │   │   │   ├── Contents.json
-│   │   │   │   │   ├── Icon-App-1024x1024@1x.png
-│   │   │   │   │   ├── Icon-App-20x20@1x.png
-│   │   │   │   │   ├── Icon-App-20x20@2x.png
-│   │   │   │   │   ├── Icon-App-20x20@3x.png
-│   │   │   │   │   ├── Icon-App-29x29@1x.png
-│   │   │   │   │   ├── Icon-App-29x29@2x.png
-│   │   │   │   │   ├── Icon-App-29x29@3x.png
-│   │   │   │   │   ├── Icon-App-40x40@1x.png
-│   │   │   │   │   ├── Icon-App-40x40@2x.png
-│   │   │   │   │   ├── Icon-App-40x40@3x.png
-│   │   │   │   │   ├── Icon-App-60x60@2x.png
-│   │   │   │   │   ├── Icon-App-60x60@3x.png
-│   │   │   │   │   ├── Icon-App-76x76@1x.png
-│   │   │   │   │   ├── Icon-App-76x76@2x.png
-│   │   │   │   │   └── Icon-App-83.5x83.5@2x.png
-│   │   │   │   └── LaunchImage.imageset
-│   │   │   │       ├── Contents.json
-│   │   │   │       ├── LaunchImage.png
-│   │   │   │       ├── LaunchImage@2x.png
-│   │   │   │       ├── LaunchImage@3x.png
-│   │   │   │       └── README.md
-│   │   │   ├── Base.lproj
-│   │   │   │   ├── LaunchScreen.storyboard
-│   │   │   │   └── Main.storyboard
-│   │   │   ├── AppDelegate.swift
-│   │   │   ├── Info.plist
-│   │   │   └── Runner-Bridging-Header.h
-│   │   ├── Runner.xcodeproj
-│   │   │   ├── project.xcworkspace
-│   │   │   │   ├── xcshareddata
-│   │   │   │   │   ├── IDEWorkspaceChecks.plist
-│   │   │   │   │   └── WorkspaceSettings.xcsettings
-│   │   │   │   └── contents.xcworkspacedata
-│   │   │   ├── xcshareddata
-│   │   │   │   └── xcschemes
-│   │   │   │       └── Runner.xcscheme
-│   │   │   └── project.pbxproj
-│   │   ├── Runner.xcworkspace
-│   │   │   ├── xcshareddata
-│   │   │   │   ├── IDEWorkspaceChecks.plist
-│   │   │   │   └── WorkspaceSettings.xcsettings
-│   │   │   └── contents.xcworkspacedata
-│   │   ├── RunnerTests
-│   │   │   └── RunnerTests.swift
-│   │   └── .gitignore
+│   ├── android/
+│   ├── ios/
+│   ├── linux/
+│   ├── macos/
+│   ├── windows/
+│   ├── web/
+│   ├── test/
 │   ├── lib
 │   │   ├── models
 │   │   │   └── gymkhana.dart
@@ -172,100 +83,8 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 │   │   │   └── api.dart
 │   │   ├── config.dart
 │   │   └── main.dart
-│   ├── linux
-│   │   ├── flutter
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── generated_plugin_registrant.cc
-│   │   │   ├── generated_plugin_registrant.h
-│   │   │   └── generated_plugins.cmake
-│   │   ├── runner
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── main.cc
-│   │   │   ├── my_application.cc
-│   │   │   └── my_application.h
-│   │   ├── .gitignore
-│   │   └── CMakeLists.txt
-│   ├── macos
-│   │   ├── Flutter
-│   │   │   ├── Flutter-Debug.xcconfig
-│   │   │   ├── Flutter-Release.xcconfig
-│   │   │   └── GeneratedPluginRegistrant.swift
-│   │   ├── Runner
-│   │   │   ├── Assets.xcassets
-│   │   │   │   └── AppIcon.appiconset
-│   │   │   │       ├── app_icon_1024.png
-│   │   │   │       ├── app_icon_128.png
-│   │   │   │       ├── app_icon_16.png
-│   │   │   │       ├── app_icon_256.png
-│   │   │   │       ├── app_icon_32.png
-│   │   │   │       ├── app_icon_512.png
-│   │   │   │       ├── app_icon_64.png
-│   │   │   │       └── Contents.json
-│   │   │   ├── Base.lproj
-│   │   │   │   └── MainMenu.xib
-│   │   │   ├── Configs
-│   │   │   │   ├── AppInfo.xcconfig
-│   │   │   │   ├── Debug.xcconfig
-│   │   │   │   ├── Release.xcconfig
-│   │   │   │   └── Warnings.xcconfig
-│   │   │   ├── AppDelegate.swift
-│   │   │   ├── DebugProfile.entitlements
-│   │   │   ├── Info.plist
-│   │   │   ├── MainFlutterWindow.swift
-│   │   │   └── Release.entitlements
-│   │   ├── Runner.xcodeproj
-│   │   │   ├── project.xcworkspace
-│   │   │   │   └── xcshareddata
-│   │   │   │       └── IDEWorkspaceChecks.plist
-│   │   │   ├── xcshareddata
-│   │   │   │   └── xcschemes
-│   │   │   │       └── Runner.xcscheme
-│   │   │   └── project.pbxproj
-│   │   ├── Runner.xcworkspace
-│   │   │   ├── xcshareddata
-│   │   │   │   └── IDEWorkspaceChecks.plist
-│   │   │   └── contents.xcworkspacedata
-│   │   ├── RunnerTests
-│   │   │   └── RunnerTests.swift
-│   │   └── .gitignore
-│   ├── test
-│   │   └── widget_test.dart
-│   ├── web
-│   │   ├── icons
-│   │   │   ├── Icon-192.png
-│   │   │   ├── Icon-512.png
-│   │   │   ├── Icon-maskable-192.png
-│   │   │   └── Icon-maskable-512.png
-│   │   ├── favicon.png
-│   │   ├── index.html
-│   │   └── manifest.json
-│   ├── windows
-│   │   ├── flutter
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── generated_plugin_registrant.cc
-│   │   │   ├── generated_plugin_registrant.h
-│   │   │   └── generated_plugins.cmake
-│   │   ├── runner
-│   │   │   ├── resources
-│   │   │   │   └── app_icon.ico
-│   │   │   ├── CMakeLists.txt
-│   │   │   ├── flutter_window.cpp
-│   │   │   ├── flutter_window.h
-│   │   │   ├── main.cpp
-│   │   │   ├── resource.h
-│   │   │   ├── runner.exe.manifest
-│   │   │   ├── Runner.rc
-│   │   │   ├── utils.cpp
-│   │   │   ├── utils.h
-│   │   │   ├── win32_window.cpp
-│   │   │   └── win32_window.h
-│   │   ├── .gitignore
-│   │   └── CMakeLists.txt
-│   ├── .gitignore
-│   ├── analysis_options.yaml
-│   ├── pubspec.lock
 │   ├── pubspec.yaml
-│   └── README.md
+│   └── pubspec.lock
 ├── Next_FRONTEND
 │   ├── src
 │   │   ├── app
@@ -325,10 +144,11 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 │   ├── mvnw
 │   ├── mvnw.cmd
 │   └── pom.xml
+├── Multimedia/
 ├── .gitignore
-├── notas.txt
+├── info.md
+├── stack-tecnologico.md
 └── README.md
-           
 ```
 
 ---
@@ -336,9 +156,9 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 ## Tecnologías Utilizadas
 
 ### Backends
-- **Django 4.x** + Django REST Framework
+- **Django 5.2.7** + Django REST Framework 3.16.1
 - **FastAPI** + Uvicorn
-- **Spring Boot 3.x** + Maven
+- **Spring Boot 3.5.6** + Maven
 
 ### Frontends
 - **React Native** + Expo
@@ -350,16 +170,16 @@ En definitiva, este proyecto sirve como playground para comparar diferentes stac
 ## Requisitos Previos
 
 ### Para Backends Python (Django y FastAPI)
-- Python 3.8 o superior
+- Python 3.10 o superior
 - pip
 
 ### Para Backend Java (Spring Boot)
-- Java JDK 11 o superior
+- Java JDK 21 o superior
 - Maven 3.6+
 
 ### Para Frontends
 - Node.js 18+ y npm
-- Flutter SDK 3.0+ (para Flutter_FRONTEND)
+- Flutter SDK 3.5.0+ (para Flutter_FRONTEND)
 - Android Studio o Xcode (para emuladores móviles)
 
 ---
@@ -505,7 +325,7 @@ flutter devices
 
 ---
 
-#### 3️⃣ Next_FRONTEND (Puerto 3000)
+#### Next_FRONTEND (Puerto 3000)
 
 ```bash
 # Navegar al directorio
@@ -532,22 +352,28 @@ npm start
 
 **Archivos a modificar:**
 1. `app.config.js` - Línea con `const envFile`
-2. `client.js` - Variable de entorno `API_URL`
+2. `src/api/client.js` - Variable `HOST`
 
 ```javascript
 // app.config.js
-const envFile = 
-  process.env.BACKEND === 'fastapi' ? '.env.fastapi' :
-  process.env.BACKEND === 'django' ? '.env.django' :
-  process.env.BACKEND === 'springboot' ? '.env.springboot' :
-  '.env.fastapi'; // default
+const envFile = process.env.ENVFILE || ".env.springboot";
+const map = {
+  ".env.django":     { API_BASE_URL: "http://localhost:8002", API_BASE_PATH: "" },
+  ".env.fastapi":    { API_BASE_URL: "http://localhost:8001", API_BASE_PATH: "" },
+  ".env.springboot": { API_BASE_URL: "http://localhost:8003", API_BASE_PATH: "" },
+};
+```
+
+```javascript
+// src/api/client.js
+const HOST = "http://localhost:8003"; // Cambiar puerto: 8001 (FastAPI), 8002 (Django), 8003 (Spring Boot)
 ```
 
 **Usar scripts npm:**
 ```bash
 npm run start:fastapi     # Puerto 8001
 npm run start:django      # Puerto 8002
-npm run start:springboot  # Puerto 8003
+npm run start:spring      # Puerto 8003
 ```
 
 ---
@@ -556,12 +382,16 @@ npm run start:springboot  # Puerto 8003
 
 **Archivo a modificar:** `lib/config.dart`
 
+Cambiar el puerto en la constante `backendApi` según el backend deseado (8001, 8002, 8003):
+
 ```dart
 class Config {
-  // Cambiar la URL según el backend deseado
-  static const String baseUrl = 'http://localhost:8001'; // FastAPI
-  // static const String baseUrl = 'http://localhost:8002'; // Django
-  // static const String baseUrl = 'http://localhost:8003'; // Spring Boot
+  static String get baseUrl {
+    const backendApi = 'http://localhost:8003'; // Cambiar puerto aquí
+    if (kIsWeb) return backendApi;
+    if (Platform.isAndroid) return 'http://10.0.2.2:8003'; // Mismo puerto aquí
+    return backendApi;
+  }
 }
 ```
 
@@ -569,21 +399,22 @@ class Config {
 
 ### Next_FRONTEND
 
-**Archivos a modificar:**
-1. `.env.local` - Variables de entorno
-2. `src/lib/api.ts` - Configuración de API
+**Archivo a modificar:** `src/lib/api.ts` - Cambiar el puerto en el valor por defecto:
+
+```typescript
+// src/lib/api.ts
+const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8001"; // FastAPI
+// const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8002"; // Django
+// const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8003"; // Spring Boot
+```
+
+Alternativamente, se puede crear un fichero `.env.local` con la variable `NEXT_PUBLIC_API_BASE`:
 
 ```bash
 # .env.local
-NEXT_PUBLIC_API_URL=http://localhost:8001  # FastAPI
-# NEXT_PUBLIC_API_URL=http://localhost:8002  # Django
-# NEXT_PUBLIC_API_URL=http://localhost:8003  # Spring Boot
-
-# src/lib/api.ts
-const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8003" #FastAPI
-#const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8002" #Django
-#const BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8003" #Spring Boot
-
+NEXT_PUBLIC_API_BASE=http://localhost:8001  # FastAPI
+# NEXT_PUBLIC_API_BASE=http://localhost:8002  # Django
+# NEXT_PUBLIC_API_BASE=http://localhost:8003  # Spring Boot
 ```
 
 ---
@@ -660,7 +491,8 @@ Para reportar bugs o solicitar features, contacta al creador.
 
 ---
 
+
+
+<img src="Multimedia/TFG,%20Logo%20KhanaGO.png" alt="Logo KhanaGO" width="280">
+
 **¡Gracias por usar KhanaGO Stack Playground!**
-
-  <img src="Multimedia/TFG,%20Logo%20KhanaGO.png" alt="Logo KhanaGO" width="280">
-

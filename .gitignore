@@ -21,6 +21,7 @@ logs/
 **/.parcel-cache/
 **/.turbo/
 **/.cache/
+
 # Next.js
 **/.next/
 **/out/
