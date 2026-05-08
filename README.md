@@ -32,7 +32,7 @@ Para ello, se hace una prueba de entornos tecnológicos con:
 
 En definitiva, este proyecto sirve como *playground* para comparar diferentes *stacks* tecnológicos implementando la misma funcionalidad (operaciones CRUD: ver, crear, actualizar y eliminar *gymkhanas*).
 
-Para una descripción técnica detallada del *stack* tecnológico (arquitectura, modelo de dominio, *endpoints*, análisis de cada *backend* y *frontend*, decisión final y justificación), consultar el documento [stack-tecnologico.md](stack-tecnologico.md).
+Para una descripción técnica detallada del *stack* tecnológico (arquitectura, modelo de dominio, *endpoints*, análisis de cada *backend* y *frontend*, decisión final y justificación), consultar el documento del Trabajo de Fin de Grado sobre el proyecto KhanaGO.
 
 ---
 
