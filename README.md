@@ -1,6 +1,6 @@
 # 🎯 KhanaGO Stack Playground
 
-Proyecto multi-stack completo para gestión de gymkhanas con múltiples implementaciones de backend y frontend.
+Este repositorio se desarrolló en el marco de un Trabajo de Fin de Grado, con el objetivo de comparar combinaciones de *backend* y *frontend* y sustentar la elección del *stack* tecnológico definitivo del producto KhanaGO, una plataforma para la gestión, creación y participación en *gymkhanas*.
 
 ## Tabla de Contenidos
 
@@ -23,16 +23,16 @@ Proyecto multi-stack completo para gestión de gymkhanas con múltiples implemen
 
 ## Descripción
 
-Se pretende elegir el mejor backend y el mejor o los mejores frontend(s) en vista al desarrollo de una aplicación para la creación y participación de gymkhanas llamada KhanaGO.
+Se pretende elegir el mejor *backend* y el mejor o los mejores *frontend(s)* en vista al desarrollo de una aplicación para la gestión, creación y participación de *gymkhanas* llamada KhanaGO.
 
 Para ello, se hace una prueba de entornos tecnológicos con:
 
-- **3 Backends diferentes** (Django, FastAPI, Spring Boot)
-- **3 Frontends diferentes** (React Native, Flutter, Next.js)
+- **3 *Backends* diferentes** (Django, FastAPI, Spring Boot)
+- **3 *Frontends* diferentes** (React Native, Flutter, Next.js)
 
-En definitiva, este proyecto sirve como playground para comparar diferentes stacks tecnológicos implementando la misma funcionalidad (operaciones CRUD: ver, crear, actualizar y eliminar gymkhanas).
+En definitiva, este proyecto sirve como *playground* para comparar diferentes *stacks* tecnológicos implementando la misma funcionalidad (operaciones CRUD: ver, crear, actualizar y eliminar *gymkhanas*).
 
-Para una descripción técnica detallada del stack tecnológico (arquitectura, modelo de dominio, endpoints, análisis de cada backend y frontend, decisión final y justificación), consultar el documento [stack-tecnologico.md](stack-tecnologico.md).
+Para una descripción técnica detallada del *stack* tecnológico (arquitectura, modelo de dominio, *endpoints*, análisis de cada *backend* y *frontend*, decisión final y justificación), consultar el documento [stack-tecnologico.md](stack-tecnologico.md).
 
 ---
 
@@ -155,12 +155,12 @@ Para una descripción técnica detallada del stack tecnológico (arquitectura, m
 
 ## Tecnologías Utilizadas
 
-### Backends
+### *Backends*
 - **Django 5.2.7** + Django REST Framework 3.16.1
 - **FastAPI** + Uvicorn
 - **Spring Boot 3.5.6** + Maven
 
-### Frontends
+### *Frontends*
 - **React Native** + Expo
 - **Flutter** (Web/Mobile)
 - **Next.js 14** + TypeScript
@@ -201,7 +201,7 @@ Los puertos predeterminados son:
 
 ## Instalación y Ejecución
 
-### Backends
+### *Backends*
 
 #### Django_BACKEND (Puerto 8002)
 
@@ -271,7 +271,7 @@ mvn spring-boot:run
 
 ---
 
-### Frontends
+### *Frontends*
 
 #### ReactNative_FRONTEND (Puerto 8081)
 
@@ -346,7 +346,7 @@ npm start
 
 ---
 
-## Cambiar el Backend en los Frontends
+## Cambiar el *Backend* en los *Frontends*
 
 ### ReactNative_FRONTEND
 
@@ -382,7 +382,7 @@ npm run start:spring      # Puerto 8003
 
 **Archivo a modificar:** `lib/config.dart`
 
-Cambiar el puerto en la constante `backendApi` según el backend deseado (8001, 8002, 8003):
+Cambiar el puerto en la constante `backendApi` según el *backend* deseado (8001, 8002, 8003):
 
 ```dart
 class Config {
@@ -421,16 +421,16 @@ NEXT_PUBLIC_API_BASE=http://localhost:8001  # FastAPI
 
 ## Características
 
-- ✅ CRUD completo básico de Gymkhanas
+- ✅ CRUD completo básico de *Gymkhanas*
 - ✅ API REST documentada
 - ✅ CORS configurado
 - ✅ Validación de datos
 
 ---
 
-## Troubleshooting
+## *Troubleshooting*
 
-### Backend Python - "ModuleNotFoundError"
+### *Backend* Python - "ModuleNotFoundError"
 ```bash
 # Asegúrate de activar el entorno virtual (¡y en la ruta correcta! (intérprete de python correcto))
 .\.venv\Scripts\activate  # Windows
@@ -440,7 +440,7 @@ source .venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 ```
 
-### Backend Python - "uvicorn no se reconoce"
+### *Backend* Python - "uvicorn no se reconoce"
 ```bash
 # Instala uvicorn con el Python del venv activo
 python -m pip install uvicorn fastapi
@@ -467,27 +467,29 @@ flutter pub get
 
 ### Next.js - Error de variables de entorno
 ```bash
-# Asegúrate de tener .env.local
+# Asegúrate de tener ".env.local"
 # Reinicia el servidor después de cambiar variables
 ```
 
 ### CORS Issues
 Si tienes problemas de CORS, verifica:
-- Los backends tienen CORS habilitado para `http://localhost:3000`, `http://localhost:8081`, etc.
-- La URL del backend en el frontend coincide exactamente (sin barras finales extras)
+- Los *backends* tienen CORS habilitado para `http://localhost:3000`, `http://localhost:8081`, etc.
+- La URL del *backend* en el *frontend* coincide exactamente (sin barras finales extras)
 
 ---
 
+
 ## Licencia
 
-Este proyecto es de código posiblemente ampliable y está disponible bajo la licencia MIT.
+Este repositorio, de carácter académico y exploratorio, fue desarrollado para sustentar la elección del *stack* tecnológico del producto KhanaGO en el marco de un Trabajo de Fin de Grado. 
+Queda disponible bajo la licencia MIT para su uso, modificación o ampliación por terceros.
 
 
 ---
 
 ## Contacto
 
-Para reportar bugs o solicitar features, contacta al creador.
+Para reportar *bugs* o solicitar *features*, contacta al creador.
 
 ---
 
