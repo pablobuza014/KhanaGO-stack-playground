@@ -495,6 +495,6 @@ Para reportar *bugs* o solicitar *features*, contacta al creador.
 
 
 
-<img src="Multimedia/TFG,%20Logo%20KhanaGO.png" alt="Logo KhanaGO" width="280">
+<img src="Multimedia/logoKhanaGO.png" alt="Logo KhanaGO" width="280">
 
 **¡Gracias por usar KhanaGO Stack Playground!**
